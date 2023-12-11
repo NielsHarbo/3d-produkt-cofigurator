@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D configurator</title>
+    <script src="https://aframe.io/releases/1.4.0/aframe.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.1/dist/aframe-extras.min.js"></script>
+    <script src="components.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>3D produkt konfigurator</h1>
+    <a-scene 
+        embedded="true" 
+        cursor="rayOrigin: mouse" 
+        mouse="true"
+        class="scene"
+    >
+        <a-sky src="assets/bg.png" ></a-sky>
+        <a-gltf-model 
+            id="model"
+            src="gltf/kop2.glb"
+            animation-mixer
+            autoplay="true"
+        >
+        </a-gltf-model>
+        <a-entity 
+            camera 
+            look-controls 
+            wasd-controls 
+            position="0 0.15 0.37"
+        >
+
+            <a-plane
+                width="0.05"
+                height="0.05"
+                color="#ff0000"
+                position="-0.45 0 -0.488"
+                changetexture = "path: assets/texture1.jpg"
+            >    
+            </a-plane>
+            <a-plane
+                width="0.05"
+                height="0.05"
+                color="#0000ff"
+                position="-0.45 -0.1 -0.488"
+                changetexture = "path: assets/texture2.jpg"
+            >    
+            </a-plane>
+            <a-image
+                width="0.05"
+                height="0.05"
+                src="assets/fa-fa-minus.png"
+                position="-0.45 -0.2 -0.488"
+                scaledown
+            >    
+            </a-image>
+            <a-image
+                width="0.05"
+                height="0.05"
+                src="assets/fa-fa-plus.png"
+                position="-0.45 -0.3 -0.488"
+                scaleup
+            >    
+            </a-image>
+
+        </a-entity>
+
+
+
+    </a-scene>
+    
+</body>
+</html>
